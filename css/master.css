@@ -1,0 +1,431 @@
+/* starting main styles */
+:root {
+  --main-color: #ff9800;
+  font-family: "Open Sans", italic;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* ending main styles */
+/* starting setting box */
+.settings-box {
+  position: absolute;
+  z-index: 1000;
+  width: 0px;
+  min-height: 100vh;
+  background-color: #ff98006b;
+  top: 0px;
+  left: 0px;
+  transition: 0.7s;
+}
+.settings-box .options {
+  position: absolute;
+  padding: 25px 0;
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+.settings-box .options h4 {
+  text-align: center;
+  color: #fff;
+  padding: 0 5px;
+}
+.settings-box .options .colors-container ul {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings-box .options .colors-container ul li {
+  list-style: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.settings-box .options .colors-container ul li:first-child {
+  background-color: #ff9800;
+}
+.settings-box .options .colors-container ul li:nth-child(2) {
+  background-color: #e91e63;
+}
+.settings-box .options .colors-container ul li:nth-child(3) {
+  background-color: #009688;
+}
+.settings-box .options .colors-container ul li:nth-child(4) {
+  background-color: #03a9f4;
+}
+.settings-box .options .colors-container ul li:nth-child(5) {
+  background-color: #4caf50;
+}
+.settings-box .options .background-container .background-options {
+  display: flex;
+  padding: 0 50px;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  color: #fff;
+}
+.settings-box .options .background-container .background-options span {
+  background-color: #009688;
+  width: 50px;
+  padding: 5px 0;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+.settings-box .options .background-container .background-options span.active {
+  background-color: #2fc1b4;
+}
+
+.settings-box .toggle-settings {
+  position: absolute;
+  left: 0px;
+  top: 20%;
+  cursor: pointer;
+  font-size: 30px;
+  background-color: #00000000;
+  padding: 0 30px;
+  color: var(--main-color);
+  transition: 0.7s;
+}
+.settings-box.open {
+  width: 250px;
+}
+
+.settings-box.open .toggle-settings {
+  left: 250px;
+  padding: 0 5px;
+}
+.settings-box.open .options {
+  left: 0px;
+  opacity: 1;
+  visibility: visible;
+}
+/* ending setting box */
+
+/* starting landing page */
+
+.landing-page {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  margin: 0 0 50px 0;
+}
+.overlay {
+  box-sizing: border-box;
+  padding: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #000000b0;
+  z-index: 1;
+}
+
+.landing-page .overlay .header-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 100;
+}
+.landing-page .overlay .header-section .logo {
+  font-size: 25px;
+
+  transition: 2s;
+  font-weight: bold;
+}
+.landing-page .overlay .header-section .links {
+  display: flex;
+  font-size: 20px;
+  gap: 20px;
+}
+.landing-page .overlay .header-section .links li {
+  color: white;
+  list-style: none;
+}
+.landing-page .overlay .header-section .links li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.landing-page .overlay .header-section .links li a:hover,
+.landing-page .overlay .header-section .links li a.active {
+  color: var(--main-color);
+}
+.landing-page .overlay .introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.landing-page .overlay .introduction h1 span {
+  color: var(--main-color);
+  margin: 0;
+}
+.landing-page .overlay .introduction p {
+  font-size: 22px;
+
+  margin: 0;
+}
+/* the ham effects */
+.landing-page .overlay .hidden-ham {
+  /* display: none; */
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  
+}
+.landing-page .overlay .hidden-ham .links {
+  list-style: none;
+  display: none;
+}
+
+.landing-page .overlay .hidden-ham .links li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+
+}
+.landing-page .overlay .hidden-ham .links li a:hover {
+  color: var(--main-color);
+}
+/* ending landing page */
+
+/* starting about section */
+
+.holder {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about .about-image {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.about .about-image img {
+  max-height: 300px;
+  max-width: 100%;
+}
+
+.about .container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.about .text-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+.about .text-holder h1 {
+  color: var(--main-color);
+  margin: 0;
+  font-weight: 750;
+}
+.about .text-holder p {
+  font-size: 20px;
+}
+
+/* endning about section */
+/* starting skills section */
+
+.skills {
+  background-color: rgba(128, 128, 128, 0.347);
+  height: 400px;
+}
+.skills .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.skills .container h1 {
+  text-align: center;
+  font-weight: 750;
+  color: var(--main-color);
+}
+.skills .container .skill {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+  font-weight: 700;
+}
+.skills .container .skill p {
+  width: 120px;
+  text-align: center;
+}
+.skills .container .skill div {
+  background-color: rgba(128, 128, 128, 0.347);
+  width: 100%;
+  height: 50%;
+}
+.skills .container .skill div span {
+  display: block;
+  border-radius: 5px;
+  height: 100%;
+  flex: 1;
+  background-color: var(--main-color);
+}
+.skills-progress:first-of-type .skill span {
+  width: 50%;
+}
+.skills-progress:nth-of-type(2) .skill span {
+  width: 70%;
+}
+.skills-progress:nth-of-type(3) .skill span {
+  width: 90%;
+}
+/* ending skills section */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* START MEDIA QUERIES */
+@media (max-width: 767px) {
+  /* 1. Reduce the massive side padding so content can breathe */
+ .settings-box .toggle-settings{
+  top: 55px;
+
+ }
+ 
+  .container {
+    padding: 0 15px;
+  }
+
+  /* 2. Stack the header items so they don't break the screen width */
+  .landing-page .overlay .header-section {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .landing-page .overlay .header-section .links {
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  /* 3. Let the main title text take up almost the whole screen */
+  .landing-page .overlay .introduction {
+    max-width: 90%;
+  }
+
+  /* the ham icon */
+  .landing-page .overlay .hidden-ham {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 55px;
+  }
+  /* .landing-page .overlay .hidden-ham.open::after{
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height:50px ;
+    background-color: red;
+  }  */
+/* The main dropdown box */
+.landing-page .overlay .hidden-ham .links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 35px;              
+  right: 0;
+  background-color: #1a1a1a; 
+  min-width: 200px;          
+  border-radius: 8px;       
+  padding: 10px 0;         
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); 
+  z-index: 1000;
+  overflow: hidden;        
+}
+.landing-page .overlay .hidden-ham .links.open li {
+  width: 100%;
+}
+
+.landing-page .overlay .hidden-ham .links.open li a {
+  display: block;           
+  padding: 15px 25px;     
+  color: #fff;
+  
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+  border-bottom: 1px solid #333; 
+}
+
+
+.landing-page .overlay .hidden-ham .links.open li:last-child a {
+  border-bottom: none;
+}
+
+/* The Hover / Active Effect */
+.landing-page .overlay .hidden-ham .links.open li a:hover,
+.landing-page .overlay .hidden-ham .links.open li a.active {
+  background-color: var(--main-color); 
+  color: #fff;
+  padding-left: 35px; 
+  
+}
+ 
+
+/* the container  */
+  .about .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about .text-holder {
+    align-items: center;
+  }
+}
+
+/* Only hide the logo if the screen is smaller than 1200px */
+@media (max-width: 1919px) {
+  .landing-page .overlay .header-section .logo.open {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+/*END  MEDIA QUERIES */

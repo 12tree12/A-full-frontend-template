@@ -355,20 +355,14 @@
     right: 15px;
     top: 55px;
   }
-  /* .landing-page .overlay .hidden-ham.open::after{
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height:50px ;
-    background-color: red;
-  }  */
+ 
 /* The main dropdown box */
 .landing-page .overlay .hidden-ham .links.open {
   display: flex;
+
   flex-direction: column;
   position: absolute;
-  top: 35px;              
+  top: 20px;              
   right: 0;
   background-color: #1a1a1a; 
   min-width: 200px;          
@@ -376,7 +370,21 @@
   padding: 10px 0;         
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); 
   z-index: 1000;
-  overflow: hidden;        
+  /* overflow: hidden;         */
+}
+.landing-page .overlay .hidden-ham .links.open::after{
+  content: " "; 
+   display: block;
+  right: 4px;
+  top: -15px;
+  position: absolute;
+  width: 0px;
+  height:0px;
+  border-left:12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--main-color);
+
+
 }
 .landing-page .overlay .hidden-ham .links.open li {
   width: 100%;
@@ -399,8 +407,7 @@
 }
 
 /* The Hover / Active Effect */
-.landing-page .overlay .hidden-ham .links.open li a:hover,
-.landing-page .overlay .hidden-ham .links.open li a.active {
+.landing-page .overlay .hidden-ham .links.open li a:hover {
   background-color: var(--main-color); 
   color: #fff;
   padding-left: 35px; 

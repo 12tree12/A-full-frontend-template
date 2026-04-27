@@ -160,23 +160,8 @@ backGrOp.forEach((span) => {
 // ==========================================
 // STARTING HAM EFFECTS
 // ==========================================
-let hiddenHam = document.querySelector(".hidden-ham");
 let hamIcon = document.querySelector(".hidden-ham i");
 let hamLinks = document.querySelector(".hidden-ham .links");
-hiddenHam.onclick = function (e) 
-{
-console.log("jkloajsdlkfj")
-e.stopPropagation();
-
-hiddenHam.classList.toggle("open");
-};
-
-
-// hiddenHam.onclick = function (e) 
-// {
-// e.stopPropagation();
-// }
-// 1. Clicking the icon opens the menu (and stops the click from spreading)
 hamIcon.onclick = function (e) 
 {
   e.stopPropagation();

@@ -182,12 +182,23 @@ document.addEventListener("click", (e) => {
     hamLinks.classList.remove("open");
     
   }
-  //  if (hiddenHam.classList.contains("open")) {
-  //   hiddenHam.classList.remove("open");
-    
-  // }
+
 });
 
 // ==========================================
 // ENDING HAM EFFECTS
+// ==========================================
+
+
+// ==========================================
+// STARTING SKILLS SECTION EFFECTS
+// ==========================================
+let skillsList=document.querySelectorAll(".skills .skills-progress .skill span");
+console.log(skillsList)
+skillsList.forEach((span)=>{
+  console.log(span);
+   span.style.width=span.dataset.precentage;
+})
+// ==========================================
+// ENDING SKILLS SECTION EFFECTS
 // ==========================================

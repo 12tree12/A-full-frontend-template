@@ -199,6 +199,8 @@ skillsList.forEach((span)=>{
   console.log(span);
    span.style.width=span.dataset.precentage;
 })
+
+
 // ==========================================
 // ENDING SKILLS SECTION EFFECTS
 // ==========================================

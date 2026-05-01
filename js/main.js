@@ -193,13 +193,31 @@ document.addEventListener("click", (e) => {
 // ==========================================
 // STARTING SKILLS SECTION EFFECTS
 // ==========================================
-let skillsList=document.querySelectorAll(".skills .skills-progress .skill span");
-console.log(skillsList)
-skillsList.forEach((span)=>{
-  console.log(span);
+let skillSpan=document.querySelectorAll(".skills .skills-progress .skill span");
+let skillSection=document.querySelector(".skills");
+
+
+
+window.onscroll=function(){
+let skillsOffsetTop=skillSection.offsetTop; //represents the exact starting height of the skill element
+let skillsMainHeight=skillSection.offsetHeight;//the height of the skill section
+let windowHeight=this.innerHeight;
+let windowScrollTop=this.pageYOffset;//how much we scrolled from the top so far
+let NeededScroll=skillsOffsetTop-windowHeight;
+if(windowScrollTop>=NeededScroll+150)
+{
+skillSpan.forEach((span)=>{
+
    span.style.width=span.dataset.precentage;
 })
+}
+else{
+  skillSpan.forEach((span)=>{
 
+   span.style.width="0px";
+})
+}
+}
 
 // ==========================================
 // ENDING SKILLS SECTION EFFECTS

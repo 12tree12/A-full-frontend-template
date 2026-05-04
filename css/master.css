@@ -1,6 +1,7 @@
 /* starting main styles */
 :root {
   --main-color: #ff9800;
+  --main-margin:50px;
   font-family: "Open Sans", italic;
 }
 * {
@@ -11,6 +12,40 @@
   max-width: 1400px;
   margin: 0 auto;
 }
+.section-heading{
+    text-align: center;
+  margin: 30px 0 10px 0;
+  padding:0 ;
+  font-size:32px ;
+  font-weight: 750;
+  color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ending main styles */
 /* starting setting box */
 .settings-box {
@@ -113,6 +148,18 @@
 }
 /* ending setting box */
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting landing page */
 
 .landing-page {
@@ -120,7 +167,8 @@
   background-position: center;
   min-height: 100vh;
   position: relative;
-  margin: 0 0 50px 0;
+  margin: 0 0 var(--main-margin) 0;
+
 }
 .overlay {
   box-sizing: border-box;
@@ -214,13 +262,27 @@
 }
 /* ending landing page */
 
+
+
+
+
+
+
+
+
+
+
 /* starting about section */
 
 .holder {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+
+  margin-bottom: var(--main-margin);
+}
+.about{
+  margin-bottom:var(--main-margin) ;
 }
 .about .container {
   display: flex;
@@ -255,6 +317,23 @@
 }
 
 /* endning about section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting skills section */
 
 .skills {
@@ -268,17 +347,8 @@
   gap: 18px;
   padding:0 60px 30px 60px;
 }
-.skills .container h1 {
-  text-align: center;
-  margin: 0 0 10px 0;
-  
-  padding:0 ;
-  
-  font-size:32px ;
-  font-weight: 750;
-  color: var(--main-color);
-  margin-top: 30px;
-}
+
+
 .skills .container .skill {
   display: flex;
   justify-content: space-between;
@@ -291,37 +361,209 @@
   color: black;
   font-weight: 700;
 }
+
+
 .skills .container .skill p {
   width: 120px;
   text-align: center;
 }
+
+
 .skills .container .skill div {
   background-color: rgba(128, 128, 128, 0.347);
   width: 100%;
   height: 50%;
   border-radius:5px ;
-
 }
+
+
 .skills .container .skill  span {
   display: block;
   border-radius: 5px;
   height: 100%;
   flex: 1;
+  width: 0%;
   background-color: var(--main-color);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
   transition: 1s;
 }
-
 /* ending skills section */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
+
+
+
+
+
+
+
+
+
+
+
+/* starting gallery section */
+
+.gallery { 
+  width: 100%;
+  padding: 50px 0;
+}
+
+.gallery .container {
+  padding:0 30px 30px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; 
+}
+
+.gallery .gal-images {
+  width: 100%;
+  display: grid;
+  gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery .gal-images img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  will-change: transform;
+}
+
+.gallery .gal-images img:hover {
+  /* transform: scale(1.03); */
+}
+
+
+/* the popUp section */
+.popup-background {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.popup-image-container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1002;
+  max-width: 90vw; 
+  max-height: 90vh; 
+  cursor: auto;
+}
+
+
+
+.popup-image-container .popup-image {
+  
+  max-width: 100%;
+  max-height: 80vh;
+  display: block; 
+  cursor: auto;
+}
+
+
+.popup-image-container h2{
+  text-align: center;
+  margin:0  0 15px 0 ;
+  color: var(--main-color);
+}
+
+
+.popup-image-container .close-button-container{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  position: absolute;
+  right: -10px;
+  top: -15px;
+  cursor: pointer;
+}
+.popup-image-container .close-button{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  font-size:20px;
+  font-weight: 700;
+  margin: 0;
+  
+}
+/* ending gallery section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* START MEDIA QUERIES */
 @media (max-width: 767px) {
   /* 1. Reduce the massive side padding so content can breathe */

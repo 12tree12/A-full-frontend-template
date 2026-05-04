@@ -222,3 +222,86 @@ else{
 // ==========================================
 // ENDING SKILLS SECTION EFFECTS
 // ==========================================
+
+
+// ==========================================
+// STARTINS GALLERY SECTION EFFECTS
+// ==========================================
+
+// storing all the images in an array to loop over them
+let GalleryList=document.querySelectorAll(".gallery .gal-images img")
+
+
+//looping through the array of images
+GalleryList.forEach(function(image){
+
+  image.onclick=function(e){
+
+  //creating the dark layer behind the image
+  let popUpOverlay=document.createElement("div")
+  popUpOverlay.className="popup-background";
+  document.body.appendChild(popUpOverlay);
+
+
+
+  //creating the image holder
+  let imageContainer=document.createElement("div");
+  imageContainer.className="popup-image-container";
+
+
+  //creating the image text
+  if(e.target.alt )
+  {
+  let imageHeading =document.createElement("h2");
+  imageHeading.textContent=e.target.alt;
+  imageContainer.appendChild(imageHeading);
+  
+  } 
+  
+  
+  // removing the image logic
+  popUpOverlay.addEventListener("click" ,function(e){
+    //if where we are clicking is on the overlay
+    if(e.target===this || e.target===closeButtonContainer)
+    {
+      document.body.removeChild(popUpOverlay);
+
+    }
+  })
+
+
+
+  
+  //creating the close button contaienr
+  let closeButtonContainer=document.createElement("div");
+  closeButtonContainer.className="close-button-container";
+  imageContainer.appendChild(closeButtonContainer);
+    
+
+  //creating the close button
+  let closeButton =document.createElement("p")
+  closeButton.textContent="X";
+  closeButton.className="close-button"
+  closeButtonContainer.appendChild(closeButton);
+
+
+  //creating the image
+  let popUpImage=document.createElement("img");
+  popUpImage.className="popup-image"
+  popUpImage.src=e.target.src;
+  
+ //appending children
+  imageContainer.appendChild(popUpImage);
+  popUpOverlay.appendChild(imageContainer);
+
+  }
+
+})
+
+
+
+
+
+// ==========================================
+// ENDING GALLERY SECTION EFFECTS
+// ==========================================

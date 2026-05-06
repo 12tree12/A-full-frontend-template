@@ -261,11 +261,10 @@ GalleryList.forEach(function(image){
   
   // removing the image logic
   popUpOverlay.addEventListener("click" ,function(e){
-    //if where we are clicking is on the overlay
-    if(e.target===this || e.target===closeButtonContainer)
+    //if where we are clicking is on the overlay 
+    if(e.target===this || closeButtonContainer.contains(e.target))
     {
       document.body.removeChild(popUpOverlay);
-
     }
   })
 

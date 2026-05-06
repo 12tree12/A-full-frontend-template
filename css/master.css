@@ -46,6 +46,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ending main styles */
 /* starting setting box */
 .settings-box {
@@ -147,6 +165,37 @@
   visibility: visible;
 }
 /* ending setting box */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -272,13 +321,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting about section */
 
 .holder {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   margin-bottom: var(--main-margin);
 }
 .about{
@@ -334,10 +414,37 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting skills section */
 
 .skills {
   background-color: rgba(128, 128, 128, 0.347);
+ 
   
 }
 .skills .container {
@@ -399,11 +506,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting gallery section */
 
 .gallery { 
   width: 100%;
-  padding: 50px 0;
+  margin-bottom: var(--main-margin);
 }
 
 .gallery .container {
@@ -464,7 +604,6 @@
 }
 
 
-
 .popup-image-container .popup-image {
   
   max-width: 100%;
@@ -512,35 +651,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* starting timeLine section */
+
+/* Container and Clearfix */
 .timeline {
   background-color: rgba(128, 128, 128, 0.347);
+  margin-bottom: var(--main-margin);
+
 }
 
 .timeline .container {
-  display: flex;
-  min-height: 250px;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-  position: relative; 
-  padding: 50px 60px 30px 60px; 
+  position: relative;
+  padding: 50px 60px; 
 }
 
-.timeline .text-holder {
-  padding: 20px; 
-  background-color: #fff;
-  flex: 1; 
-  border-radius: 6px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.timeline .text-holder h3 {
-  color: var(--main-color);
-  margin-top: 0;
-}
-
-.timeline .container::after {
+/* The Center Line - Changed to ::before */
+.timeline .container::before {
   content: '';
   position: absolute;
   top: 10px;
@@ -549,12 +717,86 @@
   transform: translateX(-50%);
   width: 3px; 
   background-color: var(--main-color);
+  z-index: 1; 
 }
 
+/* Text Holders using Floats */
+.timeline .text-holder-left, 
+.timeline .text-holder-right {
+  position: relative;
+  width: calc(50% - 40px); 
+  padding: 20px; 
+  background-color: #fff;
+  border-radius: 6px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2; 
+}
+
+.timeline .text-holder-left {
+  float: left;
+  clear: both; 
+}
+
+.timeline .text-holder-right {
+  float: right;
+  clear: both; 
+  margin-top: 20px; 
+}
+
+.timeline .text-holder-left h3,
+.timeline .text-holder-right h3 {
+  color: var(--main-color);
+  margin-top: 0;
+}
+
+/* Bullets Centered on the Line */
+.timeline .text-holder-left::after,
+.timeline .text-holder-right::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff; 
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  top: 20px;
+}
+
+.timeline .text-holder-left::after {
+  right: -40px; 
+  transform: translateX(50%); 
+}
+
+.timeline .text-holder-right::after {
+  left: -40px;
+  transform: translateX(-50%); 
+}
+
+/* Arrows Pointing to Bullets */
+.timeline .text-holder-left::before,
+.timeline .text-holder-right::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  top: 23px; 
+}
+
+.timeline .text-holder-left::before {
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #fff;
+  right: -15px;
+}
+
+.timeline .text-holder-right::before {
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #fff transparent transparent;
+  left: -15px;
+}
+
+/* Year Badge */
 .timeline .year-badge {
   position: absolute;
   top: 10px;
-  
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--main-color);
@@ -562,9 +804,8 @@
   padding: 4px 12px;
   border-radius: 4px;
   font-weight: bold;
-  z-index: 1; 
+  z-index: 3; 
 }
-
 
 /* ending timeLine section */
 
@@ -746,26 +987,52 @@
 }
 
 /* the timeline */
-@media (max-width: 767px) {
-  .timeline .container {
-    flex-direction: column;
-    padding: 50px 20px 30px 20px;
-    gap: 30px;
-    align-items: flex-end; 
+@media (max-width: 768px) {
+  /* Move the main line to the left */
+  .timeline .container::before {
+    left: 20px;
+    transform: translateX(0);
   }
 
-  .timeline .container::after {
-    left: 40px;
-    transform: none;
+  /* Make text holders full width and remove floats */
+  .timeline .text-holder-left, 
+  .timeline .text-holder-right {
+    width: calc(100% - 60px); /* Leave space for the line */
+    float: none;
+    margin-left: 60px; /* Push text to the right of the line */
+    margin-bottom: 20px;
   }
 
+  /* Reset the top margin on the right items */
+  .timeline .text-holder-right {
+    margin-top: 20px;
+  
+  }
+
+  /* Move all bullets to the left line */
+  .timeline .text-holder-left::after,
+  .timeline .text-holder-right::after {
+    left: -50px; /* Centers the 20px bullet on the line at 20px */
+    right: auto;
+    transform: translateX(0);
+  }
+
+  /* Make all arrows point to the left */
+  .timeline .text-holder-left::before,
+  .timeline .text-holder-right::before {
+    left: -15px; 
+    right: auto;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  /* Optional: Move the year badge to align with the new line */
   .timeline .year-badge {
-    left: 40px;
-  }
-
-  .timeline .text-holder {
-    width: calc(100% - 40px); 
-    flex: none; 
+    left: 20px;
+    top:0;
+    transform: translateX(0);
+    margin-bottom: 20px;
+    position: relative; /* Keeps it in the normal flow of the stacked items */
   }
 }
 /*end time line */

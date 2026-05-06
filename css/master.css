@@ -548,7 +548,6 @@
 
 .gallery .container {
   padding:0 30px 30px 30px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -573,7 +572,7 @@
 }
 
 .gallery .gal-images img:hover {
-  /* transform: scale(1.03); */
+  transform: scale(1.03);
 }
 
 
@@ -852,6 +851,125 @@
 
 
 
+/* starting our features */
+.our-features {
+  padding: 80px 0; /* Better spacing for the whole section */
+  background-color: #f9f9f9; /* Subtle background to make cards pop */
+}
+
+.our-features .container {
+  text-align: center;
+}
+
+.our-features .container h1 {
+  color: var(--main-color);
+  margin-bottom: 60px;
+  font-size: 36px;
+}
+
+.our-features .features-holder {
+  display: grid;
+  gap: 40px; 
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+}
+
+
+.our-features .features-holder .feature {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.our-features .features-holder .feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.our-features .features-holder .feature img {
+  width: 90px; 
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+
+.our-features .features-holder .feature h3 {
+  color: var(--main-color);
+  font-size: 22px;
+  position: relative;
+  padding-bottom: 15px; 
+  margin-bottom: 15px;
+}
+
+
+.our-features .features-holder .feature h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 50px; 
+  height: 3px;
+  background-color: var(--main-color);
+  border-radius: 2px;
+}
+
+.our-features .features-holder .feature p {
+  color: #777;
+  line-height: 1.6;
+}
+/* ending out features */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -972,9 +1090,31 @@
     gap: 30px;
   }
 
+
+
   .about .text-holder {
     align-items: center;
   }
+
+/* THE FEATURES SECTION */
+
+.our-features .features-holder{
+  gap: 50px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 50px; */
+}
+.our-features .features-holder .feature{
+  width: 250px;
+  
+}
+
+.our-features .features-holder .feature img{
+  max-width: 250px;
+}
+
 }
 
 /* Only hide the logo if the screen is smaller than 1200px */
@@ -1012,7 +1152,7 @@
   /* Move all bullets to the left line */
   .timeline .text-holder-left::after,
   .timeline .text-holder-right::after {
-    left: -50px; /* Centers the 20px bullet on the line at 20px */
+    left: -110px; 
     right: auto;
     transform: translateX(0);
   }

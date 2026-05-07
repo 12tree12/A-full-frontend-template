@@ -120,24 +120,36 @@
 }
 .settings-box .options .background-container .background-options {
   display: flex;
-  padding: 0 50px;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2); /* Creates a dark track for the switch */
+  border-radius: 30px; /* Makes the whole track pill-shaped */
+  padding: 5px;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 0;
 }
+
 .settings-box .options .background-container .background-options span {
-  background-color: #009688;
-  width: 50px;
-  padding: 5px 0;
+  width: 60px;
+  padding: 8px 0;
   cursor: pointer;
   text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px; /* Rounds the inner buttons */
+  color: #fff;
+  background-color: transparent; /* Hides background until clicked */
+  transition: all 0.3s ease;
 }
+
+/* When the button is clicked/active */
 .settings-box .options .background-container .background-options span.active {
-  background-color: #2fc1b4;
+  background-color: #fff;
+  color: var(--main-color); /* Automatically matches whatever theme color you picked! */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.settings-box .options .background-container .background-options span:hover{
+  transform: scale(1.03);
 }
 
 .settings-box .toggle-settings {
@@ -165,6 +177,117 @@
   visibility: visible;
 }
 /* ending setting box */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navigation-bullets{
+  z-index: 1002;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: fixed;
+}
+
+
+.navigation-bullets .bullet{ 
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: solid 2px  var(--main-color);
+  background-color: transparent;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+
+/* showing the sections nametags when i hover one of the bullets */
+
+.navigation-bullets .bullet:hover{
+  background-color: var(--main-color);
+}
+
+
+.navigation-bullets .bullet .tooltip{ 
+  display: none;
+  position: absolute;
+  color: white;
+  font-size:16px ;
+  width: 100px;
+  height:25px;
+  padding: 2px 0;
+  background-color: var(--main-color);
+  top: 50%;
+  transform: translateY(-50%);
+  left: -113px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+
+.navigation-bullets .bullet .tooltip::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    right: -19px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 10px 10px 10px 10px;
+    border-color: transparent transparent transparent  var(--main-color);
+}
+
+
+.navigation-bullets .bullet:hover .tooltip{
+  display: block;
+}
+
+
 
 
 
@@ -286,12 +409,12 @@
 }
 /* the ham effects */
 .landing-page .overlay .hidden-ham {
-  /* display: none; */
   color: white;
   font-size: 25px;
   cursor: pointer;
   display: none;
-  
+  position: relative;
+ 
 }
 .landing-page .overlay .hidden-ham .links {
   list-style: none;
@@ -723,6 +846,7 @@
 .timeline .text-holder-left, 
 .timeline .text-holder-right {
   position: relative;
+  margin-top: 40px;
   width: calc(50% - 40px); 
   padding: 20px; 
   background-color: #fff;
@@ -734,12 +858,13 @@
 .timeline .text-holder-left {
   float: left;
   clear: both; 
+  
 }
 
 .timeline .text-holder-right {
   float: right;
   clear: both; 
-  margin-top: 20px; 
+ 
 }
 
 .timeline .text-holder-left h3,
@@ -793,9 +918,23 @@
 }
 
 /* Year Badge */
-.timeline .year-badge {
+.timeline .first-year-badge {
   position: absolute;
   top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 3; 
+}
+
+
+.timeline .second-year-badge {
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--main-color);
@@ -902,7 +1041,7 @@
 
 
 .our-features .features-holder .feature h3 {
-  color: var(--main-color);
+
   font-size: 22px;
   position: relative;
   padding-bottom: 15px; 
@@ -913,11 +1052,11 @@
 .our-features .features-holder .feature h3::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 45px;
   left: 50%;
   transform: translateX(-50%); 
   width: 50px; 
-  height: 3px;
+  height: 4px;
   background-color: var(--main-color);
   border-radius: 2px;
 }
@@ -927,6 +1066,127 @@
   line-height: 1.6;
 }
 /* ending out features */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* starting testamonials */
+/* THE MAIN SECTION */
+.testimonials {
+  padding: 80px 0;
+  background: linear-gradient(to right, #009688 50%, #333333 50%);
+}
+
+
+.testimonials h2 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+
+.testimonials .testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+
+
+.testimonials .testi-box {
+  background-color: white;
+  padding: 30px;
+}
+
+
+.testimonials .testi-box > p {
+  font-style: italic;
+  color: #777;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+
+
+.testimonials .person {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonials .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #dcdcdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 14px;
+  flex-shrink: 0; 
+}
+
+.testimonials .info h4 {
+  margin: 0 0 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.testimonials .info p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+
+
+/* ending testamonials */
 
 
 
@@ -989,11 +1249,10 @@
 /* START MEDIA QUERIES */
 @media (max-width: 767px) {
   /* 1. Reduce the massive side padding so content can breathe */
- .settings-box .toggle-settings{
+  .settings-box .toggle-settings{
   top: 55px;
+  }
 
- }
- 
   .container {
     padding: 0 15px;
   }
@@ -1023,7 +1282,7 @@
     right: 15px;
     top: 55px;
   }
- 
+
 /* The main dropdown box */
 .landing-page .overlay .hidden-ham .links.open {
   display: flex;
@@ -1042,7 +1301,7 @@
 }
 .landing-page .overlay .hidden-ham .links.open::after{
   content: " "; 
-   display: block;
+  display: block;
   right: 4px;
   top: -15px;
   position: absolute;
@@ -1081,7 +1340,7 @@
   padding-left: 35px; 
   
 }
- 
+
 
 /* the container  */
   .about .container {
@@ -1095,6 +1354,63 @@
   .about .text-holder {
     align-items: center;
   }
+/* the timeline section */
+
+  .timeline .container::before {
+    left: 20px;
+    transform: translateX(0);
+  }
+
+
+  .timeline .text-holder-left, 
+  .timeline .text-holder-right {
+    width: calc(100% - 60px); 
+    float: none;
+    margin-left: 60px;
+    margin-bottom: 20px;
+  }
+
+
+  .timeline .text-holder-right {
+    margin-top: 20px;
+  
+  }
+
+ 
+  .timeline .text-holder-left::after,
+  .timeline .text-holder-right::after {
+    left: -110px; 
+    right: auto;
+    transform: translateX(0);
+  }
+
+ 
+  .timeline .text-holder-left::before,
+  .timeline .text-holder-right::before {
+    left: -15px; 
+    right: auto;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  
+  .timeline .first-year-badge {
+    left: 20px;
+    top:0;
+    transform: translateX(0);
+    margin-bottom: 20px;
+    position: relative; 
+  }
+
+
+  .timeline .second-year-badge {
+    left: 20px;
+    top:50%;
+    transform: translateX(0);
+    margin-bottom: 20px;
+    position: relative; 
+  }
+
 
 /* THE FEATURES SECTION */
 
@@ -1107,7 +1423,7 @@
   /* padding: 0 50px; */
 }
 .our-features .features-holder .feature{
-  width: 250px;
+  max-width: 400px;
   
 }
 
@@ -1115,7 +1431,13 @@
   max-width: 250px;
 }
 
+/* testimonials */
+.testimonials {
+    /* Changes to a Top/Bottom split on phones so it doesn't run awkwardly down the middle of stacked boxes */
+    background: linear-gradient(to bottom, #009688 50%, #333333 50%);
+  }
 }
+
 
 /* Only hide the logo if the screen is smaller than 1200px */
 @media (max-width: 1919px) {
@@ -1127,54 +1449,7 @@
 }
 
 /* the timeline */
-@media (max-width: 768px) {
-  /* Move the main line to the left */
-  .timeline .container::before {
-    left: 20px;
-    transform: translateX(0);
-  }
 
-  /* Make text holders full width and remove floats */
-  .timeline .text-holder-left, 
-  .timeline .text-holder-right {
-    width: calc(100% - 60px); /* Leave space for the line */
-    float: none;
-    margin-left: 60px; /* Push text to the right of the line */
-    margin-bottom: 20px;
-  }
-
-  /* Reset the top margin on the right items */
-  .timeline .text-holder-right {
-    margin-top: 20px;
-  
-  }
-
-  /* Move all bullets to the left line */
-  .timeline .text-holder-left::after,
-  .timeline .text-holder-right::after {
-    left: -110px; 
-    right: auto;
-    transform: translateX(0);
-  }
-
-  /* Make all arrows point to the left */
-  .timeline .text-holder-left::before,
-  .timeline .text-holder-right::before {
-    left: -15px; 
-    right: auto;
-    border-width: 10px 15px 10px 0;
-    border-color: transparent #fff transparent transparent;
-  }
-
-  /* Optional: Move the year badge to align with the new line */
-  .timeline .year-badge {
-    left: 20px;
-    top:0;
-    transform: translateX(0);
-    margin-bottom: 20px;
-    position: relative; /* Keeps it in the normal flow of the stacked items */
-  }
-}
 /*end time line */
 
 

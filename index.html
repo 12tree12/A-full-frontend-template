@@ -22,9 +22,9 @@
     <div class="settings-box">
       <div class="options">
         <div class="colors-container">
-          <h4>change the site colors</h4>
+          <h4>change site colors</h4>
           <ul>
-            <li data-color="#ff9800" data-settings="#ff98006b"></li>
+            <li class="active" data-color="#ff9800" data-settings="#ff98006b"></li>
             <li data-color="#E91E63" data-settings="rgb(233 30 99 / 40%)"></li>
             <li data-color="#009688" data-settings="rgb(0 150 136 / 40%)"></li>
             <li data-color="#03A9F4" data-settings="rgb(3 169 244 / 40%)"></li>
@@ -32,14 +32,27 @@
           </ul>
         </div>
 
-        <div class="background-container">
-          <h4>do u want a static background ?</h4>
+        <div class="background-type-container">
+          <h4>Static Background ?</h4>
           <div class="background-options">
             <span data-background="static">yes</span>
-            <span data-background="random">no</span>
+            <span class="active" data-background="random">no</span>
           </div>
         </div>
+      
+      <div class="bullets-visablity">
+        <h4>Hide Bullets ?</h4>
+        <div class="background-options">
+          <span  data-visibilty="hidden">yes</span>
+            <span data-visibilty="visible">no</span>
+        </div>
       </div>
+        
+
+      <div class="resetting-btn">
+        <button>Reset Options</button>
+            </div>
+          </div>
       <div class="toggle-settings">
         <i class="fa fa-gear"></i>
       </div>
@@ -82,7 +95,7 @@
       </div>
 
 
-      </div>
+    </div>
     
     <!-- ending navigation bullets section -->
 
@@ -374,6 +387,43 @@
 
 <!-- ending testimonials -->
 
+
+
+<!-- starting contact us section -->
+ <section class="contact" data-section=".contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    
+    <div class="contact-content">
+      <div class="info">
+        <h4>Get In Touch</h4>
+        <p>Have a question or want to work together? Leave us a message and we will get back to you as soon as possible.</p>
+        
+        <div class="info-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Development Street, Tech City</span>
+        </div>
+        <div class="info-box">
+          <i class="fa-solid fa-phone"></i>
+          <span>+1 (234) 567-8900</span>
+        </div>
+        <div class="info-box">
+          <i class="fa-solid fa-envelope"></i>
+          <span>hello@yourdomain.com</span>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    
+  </div>
+</section>
 
 
     <script src="/js/main.js"></script>

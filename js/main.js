@@ -93,14 +93,13 @@ document.querySelector(".toggle-settings .fa-gear").onclick = function () {
 let colorList = document.querySelectorAll(".settings-box .options ul li");
 let box = document.querySelector(".settings-box");
 
-// Handles clicking on color swatches to update CSS variables and Local Storage
+// Handling  clicking on color swatches to update CSS variables and Local Storage
 colorList.forEach((li) => {
   li.addEventListener("click", (e) => {
     let colorsObj = {
       mainColor: e.target.dataset.color,
       settingsColor: e.target.dataset.settings,
     };
-
     colorList.forEach((li) => { li.style.border = "none"; });
     e.target.style.border = "2px solid white";
 
@@ -133,7 +132,7 @@ colorList.forEach((li) => {
 // SETTINGS BOX: BACKGROUND OPTIONS
 // ==========================================
 
-let backGrOp = document.querySelectorAll(".settings-box .options .background-container .background-options span");
+let backGrOp = document.querySelectorAll(".settings-box .options .background-type-container .background-options span");
 let backgroundImg;
 
 // Load previously saved background preferences
@@ -304,7 +303,6 @@ GalleryList.forEach(function (image) {
 
     imageContainer.appendChild(popUpImage);
     popUpOverlay.appendChild(imageContainer);
-
     // Destroys the popup if the overlay background or the 'X' button is clicked
     popUpOverlay.addEventListener("click", function (e) {
       if (e.target === this || closeButtonContainer.contains(e.target)) {
@@ -313,6 +311,8 @@ GalleryList.forEach(function (image) {
     });
   };
 });
+
+
 
 
 
@@ -336,10 +336,13 @@ let sectionSelector = function (event) {
 };
 
 // 1. Navigation from Side Bullets
+
 let bullets = document.querySelectorAll(".navigation-bullets .bullet");
+
 bullets.forEach((e) => {
+
   e.addEventListener("click", (event) => {
-    sectionSelector(event);
+    sectionSelector(event);  
   });
 });
 
@@ -362,3 +365,89 @@ hiddenMenuBar.forEach((e) => {
 });
 
 document.querySelector(".navigation-bullets").style.display = "block";
+
+
+
+
+
+
+
+// ==========================================
+//  NAVIGATION BULLETS VISIBILTY
+// ==========================================
+let bulletsVisbilty=document.querySelectorAll(".bullets-visablity .background-options span");
+let navigationBullets=document.querySelector(".navigation-bullets");
+
+
+
+
+// transferring the acitve class 
+let activeHandling=function(clickedElement)
+{
+  let list=clickedElement.parentElement.querySelectorAll("span");
+
+  list.forEach((e)=>
+    { 
+      e.classList.remove("active");
+    })
+// adding the acitve class to the clicked element
+clickedElement.classList.add("active")
+//saving to local storage concept
+
+if(clickedElement.dataset.visibilty==="hidden")
+{ 
+  
+  localStorage.setItem("bulletsVisbilty","hidden")
+  //hiding the bullets
+  navigationBullets.style.display="none";
+}
+else{
+  localStorage.setItem("bulletsVisbilty","visable")
+  //hiding the bullets
+  navigationBullets.style.display="block";
+}
+}
+
+//the active class logic
+bulletsVisbilty.forEach((span)=>{
+    if(localStorage.getItem("bulletsVisbilty")==="hidden"){
+      bulletsVisbilty[0].classList.add("active");
+      navigationBullets.style.display="none";
+      
+      
+    }
+    else
+    {
+      bulletsVisbilty[1].classList.add("active");
+      navigationBullets.style.display="block";
+
+      
+    }
+  span.onclick=function(event){
+  activeHandling(event.target)
+  }
+ 
+  
+})
+
+
+
+
+
+
+
+
+
+
+// ==========================================
+//  RESETING TO DEFAULT OPTIONS
+// ==========================================
+let resetBtn=document.querySelector(".resetting-btn button");
+resetBtn.onclick=function(event){
+  
+  localStorage.removeItem("backgroundOption");
+  localStorage.removeItem("bulletsVisbilty");
+  localStorage.removeItem("siteColors");
+  window.location.reload();
+
+}

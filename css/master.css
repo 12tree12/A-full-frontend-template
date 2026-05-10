@@ -672,9 +672,7 @@ margin: 0
 /* starting skills section */
 
 .skills {
-  background-color: rgba(128, 128, 128, 0.347);
- 
-  
+  background-color:#2a2a2a;
 }
 .skills .container {
   display: flex;
@@ -919,7 +917,7 @@ margin: 0
 
 /* Container and Clearfix */
 .timeline {
-  background-color: rgba(128, 128, 128, 0.347);
+   background-color: #2a2a2a;
   margin-bottom: var(--main-margin);
 
 }
@@ -1014,13 +1012,13 @@ margin: 0
 .timeline .text-holder-left::before {
   border-width: 10px 0 10px 15px;
   border-color: transparent transparent transparent #fff;
-  right: -15px;
+  right: -14px;
 }
 
 .timeline .text-holder-right::before {
   border-width: 10px 15px 10px 0;
   border-color: transparent #fff transparent transparent;
-  left: -15px;
+  left: -14px;
 }
 
 /* Year Badge */
@@ -1633,6 +1631,26 @@ margin: 0
   .about .text-holder {
     align-items: center;
   }
+ /* the skills section */
+  .skills .container .skill{
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  }
+ 
+  .skills .container .skill p{
+  margin: 0  0 10px 0;
+  }
+
+
+
+
+
+
+
+
 /* the timeline section */
 
   .timeline .container::before {
@@ -1666,7 +1684,7 @@ margin: 0
  
   .timeline .text-holder-left::before,
   .timeline .text-holder-right::before {
-    left: -15px; 
+    left: -14px; 
     right: auto;
     border-width: 10px 15px 10px 0;
     border-color: transparent #fff transparent transparent;
@@ -1713,7 +1731,7 @@ margin: 0
 /* testimonials */
 .testimonials {
     /* Changes to a Top/Bottom split on phones so it doesn't run awkwardly down the middle of stacked boxes */
-    background: linear-gradient(to bottom, #009688 50%, #333333 50%);
+    background: linear-gradient(to bottom, var(--main-color), #333333 50%);
   }
 
 
